@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akash Bhujbale | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+
+    body { background: var(--bg); color: var(--text); line-height: 1.6; transition: background 0.3s, color 0.3s; }
+
+    /* Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    nav h1 { font-size: 20px; }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .menu-btn { display: none; cursor: pointer; font-size: 22px; }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 80px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero h2 { font-size: 42px; }
+    .hero p { margin-top: 15px; color: #555; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 18px;
+      border-radius: 6px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover { background: #1e4ed8; }
+
+    .profile-box {
+      height: 250px;
+      background: linear-gradient(135deg,#c7d2fe,#e9d5ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    section { padding: 70px 20px; }
+    .container { max-width: 1100px; margin: auto; }
+
+    h3 { text-align: center; font-size: 32px; margin-bottom: 30px; }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Contact */
+    .contact-links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Mobile */
+    @media(max-width:768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        width: 200px;
+        padding: 15px;
+        display: none;
+        box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active { display: flex; }
+      .menu-btn { display: block; }
+    }
+  
+    /* Theme Variables */
+    :root {
+      --bg: #f5f7fb;
+      --text: #222;
+      --card-bg: #ffffff;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --card-bg: #1e293b;
+    }
+
+    body.dark header { background:#1e293b; }
+    body.dark .card,
+    body.dark .project-card { background: var(--card-bg); color: var(--text); }
+    body.dark footer { background:#020617; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>Akash Bhujbale</h1>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    <button onclick="toggleTheme()" id="themeToggle" style="margin-left:10px;padding:6px 10px;border:none;border-radius:6px;cursor:pointer;">🌙</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h2>Java Full Stack Developer</h2>
+    <p>Fresher passionate about building scalable web applications using Java, Spring Boot, SQL and modern web technologies.</p>
+    <a href="#projects" class="btn">View Projects</a>
+  </div>
+
+</section>
+
+<section id="about">
+  <div class="container">
+    <h3>About Me</h3>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+      I am a BSc Computer Science graduate and Java Full Stack Developer with knowledge of Java, Spring Boot, Microservices, SQL, HTML, CSS and JavaScript. I enjoy solving problems and continuously improving my development skills.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="card">Java</div>
+      <div class="card">Spring Boot</div>
+      <div class="card">Microservices</div>
+      <div class="card">SQL</div>
+      <div class="card">HTML & CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">REST APIs</div>
+      <div class="card">Git & GitHub</div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h3>Projects</h3>
+    <div class="projects">
+      <div class="project-card">
+        <h4>Employee Management System</h4>
+        <p>CRUD application using Spring Boot and MySQL with REST APIs.</p>
+      </div>
+      <div class="project-card">
+        <h4>Online Course Portal</h4>
+        <p>Full stack project with responsive frontend and Java backend.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h3>Contact Me</h3>
+    <p style="text-align:center;">Open to Java Developer opportunities.</p>
+    <div class="contact-links">
+      <a href="#">Email</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Akash Bhujbale. All rights reserved.</p>
+</footer>
+
+<script>
+  // Load saved theme
+  if(localStorage.getItem("theme") === "dark"){
+    document.body.classList.add("dark");
+    document.getElementById("themeToggle").textContent = "☀️";
+  }
+
+  function toggleTheme(){
+    document.body.classList.toggle("dark");
+    const btn = document.getElementById("themeToggle");
+    if(document.body.classList.contains("dark")){
+      localStorage.setItem("theme","dark");
+      btn.textContent = "☀️";
+    } else {
+      localStorage.setItem("theme","light");
+      btn.textContent = "🌙";
+    }
+  }
+
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+  }
+
+  // Auto update year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
